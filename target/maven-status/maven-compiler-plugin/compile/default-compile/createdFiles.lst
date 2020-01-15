@@ -1,0 +1,5 @@
+com/entertainment/test/entity/EntertainmentEntity.class
+com/entertainment/test/service/EntertainmentService.class
+com/entertainment/test/controller/EntertainmentController.class
+com/entertainment/test/EntertainmentApplication.class
+com/entertainment/test/repo/EntertainmentRepo.class

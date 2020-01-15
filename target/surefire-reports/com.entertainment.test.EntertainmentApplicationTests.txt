@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.entertainment.test.EntertainmentApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.08 s - in com.entertainment.test.EntertainmentApplicationTests
