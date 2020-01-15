@@ -24,9 +24,6 @@ public class EntertainmentController {
     @Autowired
     @Qualifier("redisTemplateCustomize")
     private RedisTemplate<String,Object> redisTemplate;
-//
-//    @Resource
-//    private StringRedisTemplate stringRedisTemplate;
 
     @RequestMapping("/getAll")
     public List<EntertainmentEntity> getAll() {
@@ -47,8 +44,8 @@ public class EntertainmentController {
                 value = redisTemplate.opsForValue().get(key).toString();
                 System.out.println(value);
             } else {
-                redisTemplate.opsForValue().set(key, value);
-//                value = entertainmentService.cacheData(key);
+//                redisTemplate.opsForValue().set(key, value);
+                value = entertainmentService.cacheData(key);
             }
 
             return "key = " + key + " value = " + value;
