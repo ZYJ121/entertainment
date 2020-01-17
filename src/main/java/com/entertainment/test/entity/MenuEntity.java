@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 
 /**
  * @author yaojunguang
- * create time: Thu Jan 16 13:16:38 CST 2020.
+ * create time: Fri Jan 17 10:58:12 CST 2020.
  */
 
 @Data
@@ -45,6 +45,11 @@ public class MenuEntity {
     @Column(name = "icon")
     //("导航图标")
     private String icon;
+
+    @Basic
+    @Column(name = "sort")
+    //("排序")
+    private Integer sort;
 
     @Basic
     @Column(name = "create_time")

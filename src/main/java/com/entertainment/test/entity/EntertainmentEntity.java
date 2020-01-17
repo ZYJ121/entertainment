@@ -1,8 +1,5 @@
 package com.entertainment.test.entity;
 
-//import io.swagger.annotations.ApiModelProperty;
-//import io.swagger.annotations.ApiModel;
-
 import lombok.Data;
 
 import javax.persistence.*;
