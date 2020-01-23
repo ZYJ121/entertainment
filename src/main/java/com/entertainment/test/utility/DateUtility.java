@@ -11,4 +11,5 @@ public class DateUtility {
     public static Timestamp now() {
         return new Timestamp(System.currentTimeMillis());
     }
+
 }

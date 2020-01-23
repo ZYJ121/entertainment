@@ -16,6 +16,7 @@ import java.util.List;
 public class MenuController {
     @Autowired
     private MenuRepo menuRepo;
+
     @RequestMapping(value = "/save",method = RequestMethod.POST)
     public MenuEntity saveMenu(String data) {
         System.out.println(data);
@@ -25,9 +26,11 @@ public class MenuController {
         menuRepo.saveAndFlush(menuEntity);
         return menuEntity;
     }
+
     @RequestMapping(value = "/getAll",method = RequestMethod.GET)
     public List<MenuEntity> getAll(){
         List<MenuEntity> menuEntities=menuRepo.findAll();
         return menuEntities;
+
     }
 }
