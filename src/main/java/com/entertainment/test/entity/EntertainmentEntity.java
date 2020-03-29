@@ -61,4 +61,83 @@ public class EntertainmentEntity {
 //    @ApiModelProperty("删除时间")
     private Timestamp updateTime;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMaleLead() {
+        return maleLead;
+    }
+
+    public void setMaleLead(String maleLead) {
+        this.maleLead = maleLead;
+    }
+
+    public String getFemaleLead() {
+        return femaleLead;
+    }
+
+    public void setFemaleLead(String femaleLead) {
+        this.femaleLead = femaleLead;
+    }
+
+    public int getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(int itemType) {
+        this.itemType = itemType;
+    }
+
+    public Integer getSort() {
+        return sort;
+    }
+
+    public void setSort(Integer sort) {
+        this.sort = sort;
+    }
+
+    public Integer getRecommend() {
+        return recommend;
+    }
+
+    public void setRecommend(Integer recommend) {
+        this.recommend = recommend;
+    }
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
+
+    public Timestamp getReadeTime() {
+        return readeTime;
+    }
+
+    public void setReadeTime(Timestamp readeTime) {
+        this.readeTime = readeTime;
+    }
+
+    public Timestamp getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Timestamp createTime) {
+        this.createTime = createTime;
+    }
+
+    public Timestamp getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Timestamp updateTime) {
+        this.updateTime = updateTime;
+    }
 }
