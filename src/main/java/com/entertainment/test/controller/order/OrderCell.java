@@ -126,4 +126,140 @@ public class OrderCell {
     @Basic
     @Column(name = "update_time" )
     private Date updateTime;
+
+    public String getSpecName() {
+        return specName;
+    }
+
+    public void setSpecName(String specName) {
+        this.specName = specName;
+    }
+
+    public float getBottomPrice() {
+        return bottomPrice;
+    }
+
+    public void setBottomPrice(float bottomPrice) {
+        this.bottomPrice = bottomPrice;
+    }
+
+    public float getPaintPrice() {
+        return paintPrice;
+    }
+
+    public void setPaintPrice(float paintPrice) {
+        this.paintPrice = paintPrice;
+    }
+
+    public float getSumPrice() {
+        return sumPrice;
+    }
+
+    public void setSumPrice(float sumPrice) {
+        this.sumPrice = sumPrice;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getCustId() {
+        return custId;
+    }
+
+    public void setCustId(int custId) {
+        this.custId = custId;
+    }
+
+    public String getCustName() {
+        return custName;
+    }
+
+    public void setCustName(String custName) {
+        this.custName = custName;
+    }
+
+    public float getAmount() {
+        return amount;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public int getInstall() {
+        return install;
+    }
+
+    public void setInstall(int install) {
+        this.install = install;
+    }
+
+    public int getUrgent() {
+        return urgent;
+    }
+
+    public void setUrgent(int urgent) {
+        this.urgent = urgent;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
+
+    public Date getOrderTime() {
+        return orderTime;
+    }
+
+    public void setOrderTime(Date orderTime) {
+        this.orderTime = orderTime;
+    }
+
+    public Date getFinishTime() {
+        return finishTime;
+    }
+
+    public void setFinishTime(Date finishTime) {
+        this.finishTime = finishTime;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
 }
