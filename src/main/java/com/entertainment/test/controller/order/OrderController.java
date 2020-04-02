@@ -29,8 +29,17 @@ public class OrderController extends BaseWebController {
         }catch (Exception e){
             error(e,respEntity);
         }
+        return respEntity;
+    }
 
-//        List<OrderItemEntity> orderCellList =orderRepo.findAll();
+    @RequestMapping(value = "/getAll",method = RequestMethod.GET)
+    public RespEntity<List<OrderItemEntity>> getAll(){
+        RespEntity<List<OrderItemEntity>> respEntity=RespEntity.One();
+        try {
+            respEntity.data = orderRepo.findAll();
+        }catch (Exception e){
+            error(e,respEntity);
+        }
         return respEntity;
     }
 

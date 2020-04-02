@@ -14,10 +14,14 @@ public class OrderService {
     @Autowired
     private EntityManager entityManager;
 
-    public List<OrderCell> orderDetail(int orderId)  {
 
-//        String sqlString="select o.id ,o.cust_id,c.name ,o.amount,o.code,o.install,o.urgent,o.state,o.describe,o.order_time ,o.finish_time,o.create_time,o.update_time FROM order_item o" ;
-        String sqlString="select s.name AS spec_name,s.bottom_price AS bottom_price,s.paint_price AS paint_price,s.sum_price AS sum_price,\n" +
+    /**
+     * 查询订单详情
+     * @param orderId
+     * @return
+     */
+    public List<OrderCell> orderDetail(int orderId)  {
+String sqlString="select s.name AS spec_name,s.bottom_price AS bottom_price,s.paint_price AS paint_price,s.sum_price AS sum_price,\n" +
                 "o.id ,o.cust_id,c.name AS cust_name,o.amount,o.code,o.install,o.urgent,o.state,o.describe,o.order_time ,o.finish_time,o.create_time,o.update_time FROM order_item o \n" +
                 "LEFT JOIN order_spec o_s ON o.id=o_s.order_id \n" +
                 "LEFT JOIN specifications s ON o_s.spec_id=s.id\n" +
@@ -25,7 +29,6 @@ public class OrderService {
                 (orderId>0?"WHERE o.id=:orderId":"");
         System.out.print(sqlString);
 
-//        Query query = entityManager.createNativeQuery(sqlString, OrderItemEntity.class);
         Query query = entityManager.createNativeQuery(sqlString,OrderCell.class);
         if(orderId>0){
             query.setParameter("orderId",orderId);
@@ -35,4 +38,6 @@ public class OrderService {
 
         return orderCellList;
     }
+
+
 }

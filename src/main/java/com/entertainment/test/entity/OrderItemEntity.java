@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * @Description  
  * @Author  zhouyanjie
- * @Date 2020-03-28 
+ * @Date 2020-04-02 
  */
 
 @Data
@@ -16,7 +16,7 @@ import java.util.Date;
 @Table ( name ="order_item" )
 public class OrderItemEntity  implements Serializable {
 
-	private static final long serialVersionUID =  3139189201899488983L;
+	private static final long serialVersionUID =  153771781738245299L;
 
 	@Id
    	@Column(name = "id" )
@@ -41,14 +41,14 @@ public class OrderItemEntity  implements Serializable {
 	 * 订单编号
 	 */
    	@Basic
-	@Column(name = "`code`" )
+	@Column(name = "code" )
 	private int code;
 
 	/**
 	 * 是否安装（0：不安装，1安装）
 	 */
    	@Basic
-	@Column(name = "`install`" )
+	@Column(name = "install" )
 	private int install;
 
 	/**
@@ -69,7 +69,7 @@ public class OrderItemEntity  implements Serializable {
 	 * 备注
 	 */
    	@Basic
-	@Column(name = "`describe`" )
+	@Column(name = "describe" )
 	private String describe;
 
 	/**
@@ -99,6 +99,13 @@ public class OrderItemEntity  implements Serializable {
    	@Basic
 	@Column(name = "update_time" )
 	private Date updateTime;
+
+	/**
+	 * 客户名
+	 */
+   	@Basic
+	@Column(name = "cust_name" )
+	private String custName;
 
 	public int getId() {
 		return this.id;
@@ -194,6 +201,14 @@ public class OrderItemEntity  implements Serializable {
 
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
+	}
+
+	public String getCustName() {
+		return this.custName;
+	}
+
+	public void setCustName(String custName) {
+		this.custName = custName;
 	}
 
 }
