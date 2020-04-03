@@ -26,6 +26,7 @@ public class ContextFilter implements Filter {
 
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         httpServletRequest.getSession();
+
         HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
         httpResponse.setHeader("Access-Control-Allow-Origin", crossName);
         httpResponse.setHeader("Access-Control-Allow-Methods", "*");
