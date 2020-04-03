@@ -92,3 +92,5 @@
 .idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml
 .idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml
 src/main/java/com/entertainment/test/configuration/CrossFilter.java
+/target/classes/
+/.idea/

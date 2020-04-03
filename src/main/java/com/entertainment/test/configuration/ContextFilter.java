@@ -1,5 +1,6 @@
 package com.entertainment.test.configuration;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -12,7 +13,8 @@ import java.io.IOException;
 @Component
 @WebFilter(urlPatterns = "/*", filterName = "contextFilter")  //这里的“/*” 表示的是需要拦截的请求路径
 public class ContextFilter implements Filter {
-
+    @Value("${cross.name}")
+    private String crossName;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -25,7 +27,7 @@ public class ContextFilter implements Filter {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         httpServletRequest.getSession();
         HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
-        httpResponse.setHeader("Access-Control-Allow-Origin", "http://localhost:8080");
+        httpResponse.setHeader("Access-Control-Allow-Origin", crossName);
         httpResponse.setHeader("Access-Control-Allow-Methods", "*");
         httpResponse.setHeader("Access-Control-Max-Age", "3600");
         httpResponse.setHeader("Access-Control-Allow-Headers","*");
