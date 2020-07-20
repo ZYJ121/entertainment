@@ -14,11 +14,11 @@ public enum RespState {
     badSecurity(1),
     //错误的用户认证信息
     badAuthor(2),
-    //已发货
+    //错误的参数
     badParams(3),
     //其他抛出错误
     exception(4),
-    //其他抛出错误
+    //不存在
     notExist(5);
 
     private int value;

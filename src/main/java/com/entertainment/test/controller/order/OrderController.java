@@ -6,6 +6,7 @@ import com.entertainment.test.entity.OrderItemEntity;
 import com.entertainment.test.repo.OrderRepo;
 import com.entertainment.test.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,26 +21,29 @@ public class OrderController extends BaseWebController {
     @Autowired
     public OrderRepo orderRepo;
 
-//    order/orderDetail?orderId=1
-    @RequestMapping(value = "/orderDetail",method = RequestMethod.GET)
-    public RespEntity<List<OrderCell>> orderDetail(int orderId){
-        RespEntity<List<OrderCell>> respEntity=RespEntity.One();
+    //    order/orderDetail?orderId=1
+    @RequestMapping(value = "/orderDetail", method = RequestMethod.GET)
+    public RespEntity<List<OrderCell>> orderDetail(int orderId) {
+        RespEntity<List<OrderCell>> respEntity = RespEntity.One();
         try {
             respEntity.data = orderService.orderDetail(orderId);
-        }catch (Exception e){
-            error(e,respEntity);
+        } catch (Exception e) {
+            error(e, respEntity);
         }
         return respEntity;
     }
 
-    @RequestMapping(value = "/getAll",method = RequestMethod.GET)
-    public RespEntity<List<OrderItemEntity>> getAll(){
-        RespEntity<List<OrderItemEntity>> respEntity=RespEntity.One();
+    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    public RespEntity<List<OrderItemEntity>> getAll() {
+        RespEntity<List<OrderItemEntity>> respEntity = RespEntity.One();
         try {
             respEntity.data = orderRepo.findAll();
-        }catch (Exception e){
-            error(e,respEntity);
+            //多线程测试方法
+            orderService.test();
+        } catch (Exception e) {
+            error(e, respEntity);
         }
+        System.out.println("返回数据");
         return respEntity;
     }
 

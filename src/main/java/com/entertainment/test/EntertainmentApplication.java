@@ -6,6 +6,9 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableAsync;
+
+import java.util.HashMap;
 
 /**
  * @Configuration 自动配置
@@ -14,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @EnableCaching
+@EnableAsync
 @SpringBootApplication
 public class EntertainmentApplication  extends SpringBootServletInitializer {
 
